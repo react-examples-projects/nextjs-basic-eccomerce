@@ -12,5 +12,44 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+}
+
+#__next {
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.view-more {
+  word-break: break-all;
+}
+
+.label {
+  display: block;
+  font-weight: normal;
+  color: #444;
+  padding: 0 0 0 1px;
+  margin-bottom: 0.5em;
+  font-size: calc(0.875 * 16px);
+  line-height: 1.5;
+}
+
+.input {
+  padding: 0;
+  box-shadow: none;
+  font-size: calc(0.875 * 16px);
+  background-color: transparent;
+  user-select: none;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  color: #000;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  padding: 7px 5px;
+  -webkit-appearance: none;
+}
+
+.carousel-root > .carousel:nth-child(2) {
+  display: none;
 }
