@@ -1,14 +1,24 @@
 import mainStyles from "css/main.module.scss";
-import { Text, Input, Button, Modal, Textarea, Grid } from "@geist-ui/react";
+import {
+  Select,
+  Text,
+  Input,
+  Button,
+  Modal,
+  Textarea,
+  Grid,
+} from "@geist-ui/react";
 import useToggle from "../hooks/useToggle";
 import useCreateProduct from "hooks/products/useCreateProduct";
 import { useState } from "react";
 import ErrorText from "components/ErrorText";
 import { isValidFile } from "utils/utils";
 import ProductList from "components/ProductList";
+import { useShoppinCardContext } from "context/ShoppingCardContext";
 
 export default function Home() {
-  const { create, isLoading, isError } = useCreateProduct();
+  const { increment } = useShoppinCardContext();
+  const { create, isLoading, isError, error } = useCreateProduct();
   const [isOpenModal, toggleOpenModal] = useToggle();
   const [files, setFiles] = useState(null);
   const [product, setProduct] = useState({
@@ -39,6 +49,7 @@ export default function Home() {
 
   return (
     <main className={mainStyles.container}>
+      <Button onClick={increment}>Incrementar contador</Button>
       <Text h1>Tienda virtual</Text>
       <Text mb={0}>
         Tienda virtual donde puedes vender, editar y explorar nuevos productos
@@ -81,6 +92,23 @@ export default function Home() {
                 id="product_description"
                 required
               />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="product_category" className="label">
+                Categoría del producto
+              </label>
+              <Select
+                width="100%"
+                name="product_category"
+                onChange={onChange}
+                id="product_category"
+                initialValue={"Aseo Personal"}
+                required
+              >
+                <Select.Option value="1">Aseo Personal</Select.Option>
+                <Select.Option value="2">Ropa y Accesorios</Select.Option>
+              </Select>
             </div>
 
             <div className="mb-3">
@@ -133,7 +161,7 @@ export default function Home() {
               </Grid.Container>
             </div>
 
-            <ErrorText isVisible={!!isError} text={isError} />
+            <ErrorText isVisible={!!isError} text={error} />
           </form>
         </Modal.Content>
 

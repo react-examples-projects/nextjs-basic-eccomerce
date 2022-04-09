@@ -20,6 +20,10 @@ a {
   padding-bottom: 2rem;
 }
 
+.h-100 {
+  height: 100%;
+}
+
 .view-more {
   word-break: break-all;
 }
@@ -52,4 +56,8 @@ a {
 
 .carousel-root > .carousel:nth-child(2) {
   display: none;
+}
+
+.card > .content {
+  height: 100% !important;
 }

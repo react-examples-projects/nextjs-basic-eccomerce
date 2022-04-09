@@ -7,6 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import { GeistProvider, CssBaseline } from "@geist-ui/core";
+import ShoppingCardProvider from "context/ShoppingCardProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }) {
     <GeistProvider>
       <CssBaseline />
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <ShoppingCardProvider>
+          <Component {...pageProps} />
+        </ShoppingCardProvider>
       </QueryClientProvider>
       <ToastContainer pauseOnFocusLoss closeOnClick />
     </GeistProvider>
