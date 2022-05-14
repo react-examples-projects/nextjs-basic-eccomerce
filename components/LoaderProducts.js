@@ -11,7 +11,7 @@ export default function LoaderProducts() {
             xs={24}
             sm={12}
             md={8}
-            lg={6}
+            lg={8}
             className="flex-column mb-3"
             key={index}
           >

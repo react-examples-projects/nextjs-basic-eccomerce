@@ -1,11 +1,6 @@
-import { AlertCircle } from "@geist-ui/react-icons";
+import { BiErrorCircle } from "react-icons/bi";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-const SpanError = styled.span`
-  color: #ff005c !important;
-  margin-left: 5px;
-`;
+import cls from "classnames";
 function ErrorText({
   isVisible,
   text = "Ocurrió un error.",
@@ -15,16 +10,21 @@ function ErrorText({
   return isVisible ? (
     <div
       {...props}
+      className={cls(props?.className, "fadeIn")}
       style={{
         display: "flex",
         alignItems: "center",
+        marginBottom: "1rem",
         ...props.style,
       }}
     >
-      <AlertCircle color="#ff005c" />
-      <small className="d-flex align-items-center">
-        <SpanError>{text || children}</SpanError>
-      </small>
+      <BiErrorCircle style={{ fill: "#ff005c" }} />
+      <span
+        className="d-flex align-items-center"
+        style={{ color: "#ff005c", marginLeft: "5px", fontSize: "0.8rem" }}
+      >
+        {text || children}
+      </span>
     </div>
   ) : null;
 }

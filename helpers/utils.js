@@ -1,4 +1,25 @@
 import { toast } from "react-toastify";
+
+/**
+ * Build a form data with `form` and `params` object
+ * @param {HTMLFormElement} form The form node
+ * @param {Object} params Optional params to add of the form data
+ * @returns The form data
+ */
+export function toFormData(params) {
+  const fd = new FormData();
+  for (const [v, k] of Object.entries(params)) {
+    if (Array.isArray(k)) {
+      for (let item of k) {
+        fd.append(`${v}[]`, item);
+      }
+    } else {
+      fd.append(v, k);
+    }
+  }
+  return fd;
+}
+
 /**
  * It verify if the `sizeImage` is larger than the allow value
  * @param {Number} sizeImage The file size

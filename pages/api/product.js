@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         const base64Img = mimeType + Buffer.from(imgFile).toString("base64");
         files.push(base64Img);
       });
-
+   
       form.on("field", (field, value) => {
         fields[field] = value;
       });

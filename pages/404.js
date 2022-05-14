@@ -1,0 +1,34 @@
+import { Button, Text } from "@geist-ui/core";
+import { BiEditAlt } from "react-icons/bi";
+import Link from "next/link";
+
+export default function Error() {
+  return (
+    <>
+      <div
+        className="text-center mx-auto mt-5 d-flex flex-column align-content-center justify-content-center"
+        style={{ maxWidth: "600px" }}
+      >
+        <img
+          alt="Un error ocurrió en la página"
+          src="./images/error.svg"
+          className="w-100 d-block mx-auto"
+          style={{ maxWidth: "300px" }}
+        />
+        <Text style={{ fontSize: "2rem" }} h1>
+          Página o recurso no encontrado
+        </Text>
+        <Text className="text-muted" p>
+          La página o recurso que intentas acceder fue eliminado o no fue
+          encontrado en nuestro servidores.
+        </Text>
+
+        <div className="d-flex w-100 justify-content-center">
+          <Link href="/">
+            <Button type="success">Ir al incio</Button>
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+}
