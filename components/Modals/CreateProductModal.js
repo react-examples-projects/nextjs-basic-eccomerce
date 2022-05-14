@@ -8,7 +8,7 @@ import Select from "react-select";
 import ErrorTextFormProduct from "components/ErrorTextFormProduct";
 import useCreateProduct from "hooks/products/useCreateProduct";
 
-export default function CreateProductModal({bindings}) {
+export default function CreateProductModal({ bindings, toggleVisible }) {
   const {
     control,
     register,
@@ -24,17 +24,17 @@ export default function CreateProductModal({bindings}) {
   ];
 
   const createProduct = async (obj) => {
+    obj.product_category = obj.product_category.value;
     const product = toFormData(obj);
     await isValidFile(files);
     for (const file of files) {
       product.append("product_images", file);
     }
-
     await create(product);
   };
 
   return (
-    <Modal {...bindings} width="30rem">
+    <Modal {...bindings} width="30rem" disableBackdropClick={true}>
       <Modal.Title>Agregar nuevo producto</Modal.Title>
 
       <Modal.Content>
@@ -143,7 +143,7 @@ export default function CreateProductModal({bindings}) {
         </form>
       </Modal.Content>
 
-      <Modal.Action passive onClick={() => setVisible(!visible)}>
+      <Modal.Action onClick={toggleVisible} passive>
         Cancelar
       </Modal.Action>
 

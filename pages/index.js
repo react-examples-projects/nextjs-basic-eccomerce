@@ -7,6 +7,7 @@ import CreateProductModal from "components/Modals/CreateProductModal";
 export default function Home() {
   const {} = useShoppinCardContext();
   const { visible, setVisible, bindings } = useModal();
+  const toggleVisible = () => setVisible(!visible);
 
   return (
     <main className={mainStyles.container}>
@@ -28,7 +29,7 @@ export default function Home() {
 
       <ProductList />
 
-      <CreateProductModal bindings={bindings}/>
+      <CreateProductModal bindings={bindings} toggleVisible={toggleVisible} />
     </main>
   );
 }
