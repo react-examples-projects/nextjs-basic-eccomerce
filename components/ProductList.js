@@ -1,12 +1,15 @@
-import React from "react";
 import { Grid } from "@geist-ui/react";
-import LoaderProducts from "./LoaderProducts";
+import LoaderProducts from "./Loaders/LoaderProducts";
 import useProducts from "hooks/products/useProducts";
 import Product from "./Product";
-import { useShoppinCardContext } from "context/ShoppingCardContext";
+import ErrorProducts from "./ErrorProducts";
 
 export default function ProductList() {
   const { products, isLoading, isError } = useProducts();
+
+  if (isError) {
+    return <ErrorProducts />;
+  }
 
   if (isLoading) {
     return <LoaderProducts />;
@@ -17,7 +20,7 @@ export default function ProductList() {
       <Grid.Container mt={5} gap={1}>
         {products?.map((product) => {
           return (
-            <Grid xs={24} sm={12} md={8} lg={8} key={product._id}>
+            <Grid xs={24} sm={12} md={6} lg={6} key={product._id}>
               <Product {...product} />
             </Grid>
           );

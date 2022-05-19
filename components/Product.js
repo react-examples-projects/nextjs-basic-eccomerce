@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, Image, Card, Button } from "@geist-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import TextShort from "./TextShort";

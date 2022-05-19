@@ -1,5 +1,4 @@
 import { Button, Text } from "@geist-ui/core";
-import { BiEditAlt } from "react-icons/bi";
 import Link from "next/link";
 
 export default function Error() {
@@ -11,7 +10,7 @@ export default function Error() {
       >
         <img
           alt="Un error ocurrió en la página"
-          src="./images/error.svg"
+          src="/images/404.svg"
           className="w-100 d-block mx-auto"
           style={{ maxWidth: "300px" }}
         />

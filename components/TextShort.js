@@ -1,4 +1,3 @@
-import React from "react";
 import { Text } from "@geist-ui/react";
 
 export default function TextShort({ content, maxLength = 100, ...args }) {

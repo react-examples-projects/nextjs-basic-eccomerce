@@ -1,7 +1,27 @@
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: auto;
   margin-top: 2rem;
   padding: 0 1rem;
+}
+
+.hero {
+  background-color: #eee;
+  display: flex;
+  max-height: 400px;
+
+  .wrapper {
+    padding: 5rem 3rem 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    max-width: 550px;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
 }

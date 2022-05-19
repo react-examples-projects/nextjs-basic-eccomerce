@@ -1,4 +1,3 @@
-import React from "react";
 import Skeleton from "react-loading-skeleton";
 import { Grid } from "@geist-ui/react";
 export default function LoaderProducts() {
@@ -10,8 +9,8 @@ export default function LoaderProducts() {
           <Grid
             xs={24}
             sm={12}
-            md={8}
-            lg={8}
+            md={6}
+            lg={6}
             className="flex-column mb-3"
             key={index}
           >

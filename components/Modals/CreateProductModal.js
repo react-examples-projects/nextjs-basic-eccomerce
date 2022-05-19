@@ -31,6 +31,7 @@ export default function CreateProductModal({ bindings, toggleVisible }) {
       product.append("product_images", file);
     }
     await create(product);
+    toggleVisible();
   };
 
   return (
