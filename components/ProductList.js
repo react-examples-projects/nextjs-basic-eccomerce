@@ -20,7 +20,7 @@ export default function ProductList() {
       <Grid.Container mt={5} gap={1}>
         {products?.map((product) => {
           return (
-            <Grid xs={24} sm={12} md={6} lg={6} key={product._id}>
+            <Grid xs={24} sm={12} md={8} lg={8} key={product._id}>
               <Product {...product} />
             </Grid>
           );

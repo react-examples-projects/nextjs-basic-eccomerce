@@ -1,9 +1,14 @@
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: auto;
   margin-top: 2rem;
   padding: 0 1rem;
+}
+
+.fluid {
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero {
@@ -23,5 +28,29 @@
   img {
     object-fit: cover;
     object-position: center;
+  }
+}
+
+.userMenu {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+
+  >li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: rgba(238, 238, 238, 0.616);
+    }
+
+    &::before {
+      display: none;
+    }
   }
 }

@@ -1,7 +1,15 @@
 import { Button, Text } from "@geist-ui/core";
+import useBody from "hooks/useBody";
 import Link from "next/link";
 
 export default function Error() {
+  useBody({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+  });
   return (
     <>
       <div

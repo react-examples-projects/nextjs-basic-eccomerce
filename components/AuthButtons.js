@@ -12,11 +12,7 @@ export default function AuthButtons() {
   if (!data?.user) {
     return (
       <>
-        <Button className="me-1" type="success-light" onClick={signIn} auto>
-          Registro
-        </Button>
-
-        <Button className="me-1" auto>
+        <Button className="ms-1" type="success-light" onClick={signIn} auto>
           Acceder
         </Button>
       </>

@@ -85,6 +85,36 @@ export default function Home() {
               </Card.Content>
             </Card>
           </Grid>
+
+          <Grid xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Card>
+              <Card.Content>
+                <div style={{ marginLeft: "8rem" }}>
+                  <Text h4>Compras Rápidas</Text>
+                  <Text className="text-muted" p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iste error officia eum earum nesciunt at repellendus, in
+                    minima magni blanditiis!
+                  </Text>
+                </div>
+              </Card.Content>
+            </Card>
+          </Grid>
+
+          <Grid xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Card>
+              <Card.Content>
+                <div style={{ marginLeft: "8rem" }}>
+                  <Text h4>Gestión Segura de Productos</Text>
+                  <Text className="text-muted" p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iste error officia eum earum nesciunt at repellendus, in
+                    minima magni blanditiis!
+                  </Text>
+                </div>
+              </Card.Content>
+            </Card>
+          </Grid>
         </Grid.Container>
       </Container>
 
